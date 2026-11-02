@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "vulkanmod",
+  "version": "${version}",
+  "name": "VulkanMod: Flashback Edition",
+  "description": "Experimental VulkanMod fork with a Flashback compatibility bridge for Minecraft 1.21.10. Record replays, use the editor, and export video with known limitations.",
+  "authors": [
+    "MrIniuserYT"
+  ],
+  "icon": "assets/vulkanmod/Vlogo.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.vulkanmod.Initializer"
+    ]
+  },
+  "mixins": [
+    "vulkanmod.mixins.json",
+    "vulkanmod.flashback.mixins.json"
+  ],
+  "accessWidener": "vulkanmod.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.17.3",
+    "minecraft": "1.21.10",
+    "java": ">=21"
+  },
+  "custom": {
+    "fabric-renderer-api-v1:contains_renderer": true,
+    "vulkanmod-flashback:status": "experimental",
+    "vulkanmod-flashback:upstream": "https://github.com/xCollateral/VulkanMod"
+  },
+  "contributors": [
+    "Collateral (upstream VulkanMod)",
+    "Moulberry (upstream Flashback; separate mod)"
+  ],
+  "license": "LGPL-3.0-only",
+  "suggests": {
+    "flashback": "0.39.10"
+  }
+}

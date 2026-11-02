@@ -1,0 +1,19 @@
+name: Source checks (not a full build)
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: CPU helper tests
+        run: sh scripts/test-core.sh
+      - name: Java syntax only (no API/type/Mixin validation)
+        run: java tests/ParseJava.java src/main/java
+      - name: Shader identifier checks
+        run: python3 tests/check_resource_ids.py

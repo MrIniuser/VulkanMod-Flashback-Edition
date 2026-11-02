@@ -1,0 +1,31 @@
+name: Bug report
+description: Report a problem with this experimental fork
+title: "[Bug] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: "Use a minimal test profile. Redact tokens and private data from logs. Do not report this fork's issues to upstream projects."
+  - type: textarea
+    id: versions
+    attributes:
+      label: Versions and hardware
+      description: Minecraft, fork, Flashback, Fabric API/Loader, Java, OS, GPU and driver.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction and expected/actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: export
+    attributes:
+      label: Export settings (if applicable)
+      description: Resolution, FPS, codec, audio, SSAA; distinguish preview from saved output.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Redacted logs
+      description: Attach latest.log/crash report. Remove access tokens, session data and personal paths.
