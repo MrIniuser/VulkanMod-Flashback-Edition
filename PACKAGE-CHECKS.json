@@ -1,0 +1,16 @@
+{
+  "package": "Public repository preparation, not automatically published",
+  "runtime_java": "Unchanged from rollback source",
+  "cpu_checks": 20,
+  "java_syntax_files": 305,
+  "full_build": "NOT_RUN_WITH_SANITIZED_LAYOUT",
+  "github_publication": "NOT_PERFORMED",
+  "excluded": [
+    "Flashback reference tree",
+    "Flashback ImGui API/natives",
+    "User logs and tokens",
+    "Build outputs and replays"
+  ],
+  "only_included_jar": "Gradle Wrapper bootstrap",
+  "licensing": "Review rights for code, dependencies and branding before public release"
+}
