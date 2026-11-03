@@ -6,6 +6,11 @@ A community-made VulkanMod fork focused on **Flashback compatibility for Minecra
 
 Maintained by **MrIniuserYT**.
 
+**Links / Ссылки**
+- YouTube channel / Канал: https://www.youtube.com/@MrIniuserMINECRAFT
+- Build guide / Гайд по сборке: https://youtu.be/2jQhGUodrAE
+- Teaser / Тизер: https://youtu.be/p2YuD-hv2n0
+
 > Experimental prerelease. The project owner reports that the restored export implementation works in their setup. This does not establish compatibility across all hardware, settings, or mods. Export may be slow, and its preview may appear vertically flipped even when the saved video is correctly oriented.
 
 ## English
@@ -33,10 +38,12 @@ VulkanMod: Flashback Edition adds a compatibility layer between VulkanMod's Vulk
 
 ### Installation
 
+There are no prebuilt JARs. The Flashback-specific `imgui-binding-1.90.0.jar` cannot be redistributed, so you have to build the mod yourself from source. See [Building](#building) below.
+
 1. Install Fabric Loader for Minecraft 1.21.10.
 2. Install the required Fabric API and Flashback versions.
-3. Download the mod JAR from this repository's **Releases**, when available.
-4. Place it in your instance's `mods` folder.
+3. Build the mod from source (see [Building](#building)).
+4. Place the resulting JAR from `build/libs/` into your instance's `mods` folder.
 5. Remove the original VulkanMod JAR before launching.
 
 **Do not install this fork alongside the original VulkanMod: both use the same mod ID.**
@@ -45,11 +52,16 @@ Flashback is installed separately and is not bundled with this fork.
 
 ### Building
 
-Install JDK 21. Obtain the Flashback-specific `imgui-binding-1.90.0.jar` from a source you are authorized to access, then place it at:
+1. Install JDK 21.
+2. Obtain the Flashback-specific `imgui-binding-1.90.0.jar` from a source you are authorized to access. Copy it manually into the `local-deps/` folder:
 
 ```text
 local-deps/imgui-binding-1.90.0.jar
 ```
+
+This file is not included in the repository and must be copied by hand before the build. The build will fail without it.
+
+3. Build.
 
 Windows:
 
@@ -64,7 +76,7 @@ chmod +x gradlew
 ./gradlew clean build
 ```
 
-Build output: `build/libs/`. Use the included wrapper, not a system Gradle 8.10 installation. Internet access is required to resolve build dependencies.
+The result is in `build/libs/`. Use the included Gradle Wrapper, not a system Gradle 8.10 installation. Internet access is required to resolve build dependencies.
 
 A standard imgui-java JAR is **not** a replacement: this project imports the Flashback-specific `imgui.moulberry90` API. This local dependency is `compileOnly` and is not included in the resulting mod JAR.
 
@@ -120,10 +132,12 @@ VulkanMod: Flashback Edition добавляет слой совместимос�
 
 ### Установка
 
+Готовых JAR-файлов нет. Специальный `imgui-binding-1.90.0.jar` из Flashback нельзя распространять вместе с проектом, поэтому мод нужно собрать самостоятельно из исходников. См. раздел [Сборка](#сборка) ниже.
+
 1. Установите Fabric Loader для Minecraft 1.21.10.
 2. Установите необходимые версии Fabric API и Flashback.
-3. Скачайте игровой JAR форка из раздела **Releases**, когда он будет опубликован.
-4. Поместите его в папку `mods` своего игрового профиля.
+3. Соберите мод из исходников (см. [Сборка](#сборка)).
+4. Поместите полученный JAR из `build/libs/` в папку `mods` своего игрового профиля.
 5. Перед запуском удалите JAR оригинального VulkanMod.
 
 **Не устанавливайте форк вместе с оригинальным VulkanMod: у них одинаковый ID мода.**
@@ -132,11 +146,16 @@ Flashback устанавливается отдельно и не входит �
 
 ### Сборка
 
-Установите JDK 21. Получите специальный `imgui-binding-1.90.0.jar` из источника, к которому у вас есть законный доступ, и поместите его в:
+1. Установите JDK 21.
+2. Получите специальный `imgui-binding-1.90.0.jar` из источника, к которому у вас есть законный доступ. Скопируйте его вручную в папку `local-deps/`:
 
 ```text
 local-deps/imgui-binding-1.90.0.jar
 ```
+
+Этот файл не входит в репозиторий и должен быть скопирован вручную до сборки. Без него сборка завершится ошибкой.
+
+3. Соберите мод.
 
 Windows:
 
