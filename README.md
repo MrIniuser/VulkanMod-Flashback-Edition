@@ -6,11 +6,6 @@ A community-made VulkanMod fork focused on **Flashback compatibility for Minecra
 
 Maintained by **MrIniuserYT**.
 
-**Links / Ссылки**
-- YouTube channel / Канал: https://www.youtube.com/@MrIniuserMINECRAFT
-- Build guide / Гайд по сборке: https://youtu.be/2jQhGUodrAE
-- Teaser / Тизер: https://youtu.be/p2YuD-hv2n0
-
 > Experimental prerelease. The project owner reports that the restored export implementation works in their setup. This does not establish compatibility across all hardware, settings, or mods. Export may be slow, and its preview may appear vertically flipped even when the saved video is correctly oriented.
 
 ## English
